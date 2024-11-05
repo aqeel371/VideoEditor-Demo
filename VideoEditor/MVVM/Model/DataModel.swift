@@ -7,44 +7,19 @@
 
 import UIKit
 
-struct DataModel:Equatable{
-        let value: Int
-        let image: UIImage?
-    
-    
-    // Data 1
-    static func setupDataModels() -> [DataModel]{
-        var data:[DataModel] = []
-        // Create DataModel instances for initial items (1 to 5)
-        for i in 1...25 {
-            let image = UIImage(named: "ic_demo") // Replace with your image
-            data.append(DataModel(value: i, image: image))
-        }
-        
-        return data
+struct DataModel {
+    var value: Int
+    var image: UIImage?
+
+    static func setupDataModels() -> [DataModel] {
+        return Array(1...5).map { DataModel(value: $0 * 5, image: UIImage(named: "ic_demo")) }
     }
-    
-    // Data 2
-    static func setupDataModels1() -> [DataModel]{
-        var data:[DataModel] = []
-        // Create DataModel instances for initial items (1 to 5)
-        for i in 1...25 {
-            let image = UIImage(named: "ic_demo1") // Replace with your image
-            data.append(DataModel(value: i, image: image))
-        }
-        
-        return data
+
+    static func setupDataModels1() -> [DataModel] {
+        return Array(1...5).map { DataModel(value: $0 * 10, image: UIImage(named: "ic_demo1")) }
     }
-    
-    // Data 3
-    static func setupDataModels2() -> [DataModel]{
-        var data:[DataModel] = []
-        // Create DataModel instances for initial items (1 to 5)
-        for i in 1...25 {
-            let image = UIImage(named: "ic_demo2") // Replace with your image
-            data.append(DataModel(value: i, image: image))
-        }
-        
-        return data
+
+    static func setupDataModels2() -> [DataModel] {
+        return Array(1...5).map { DataModel(value: $0 * 15, image: UIImage(named: "ic_demo2")) }
     }
 }
